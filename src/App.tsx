@@ -5,7 +5,7 @@ import { Button, Input, Badge, Card, Container, Modal, Alert } from "../componen
 
 // Utilities synced from demo-repo-b
 import { formatCurrency, formatDate, timeAgo, formatCompact } from "../components/repo-b";
-import { isEmail, validateField, required } from "../components/repo-b";
+import { isEmail } from "../components/repo-b";
 import { useDebounce } from "../components/repo-b";
 
 export const App: React.FC = () => {
@@ -61,7 +61,7 @@ export const App: React.FC = () => {
             label="Email"
             type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             error={!emailValid ? "Please enter a valid email address" : undefined}
             helperText="We use isEmail() from @demo/shared-utils"
           />
