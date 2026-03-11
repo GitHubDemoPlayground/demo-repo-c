@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "components/repo-a/*"
+      ],
+      "@utils/*": [
+        "components/repo-b/*"
+      ]
+    },
+    "skipLibCheck": true
+  },
+  "include": [
+    "src",
+    "components"
+  ]
+}
