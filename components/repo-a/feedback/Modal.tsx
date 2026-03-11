@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { cn } from "../utils/cn";
 
-export interface ContainerProps {
+export interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title?: string;
   children: React.ReactNode;
-  maxWidth?: "sm" | "md" | "lg" | "xl" | "full";
+  size?: "sm" | "md" | "lg";
   className?: string;
 }
 
-const maxWidthStyles = {
-  sm: "max-w-screen-sm",
-  md: "max-w-screen-md",
-  lg: "max-w-screen-lg",
-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "max-w-screen-  xl: "mx-w-lg",
+const sizeStyles = {
+  sm: "max-w-sm",
+  md: "max-w-lg",
   lg: "max-w-2xl",
 };
 
@@ -40,7 +41,7 @@ export const Modal: React.FC<ModalProps> = ({
         {title && (
           <div className="flex items-center justify-between border-b px-6 py-4">
             <h2 className="text-lg font-semibold">{title}</h2>
-            <button onClick={onClose} className="text-gray-400 hover:text-gray-600" aria-label="Close">✕</button>
+            <button onClick={onClose} className="text-gray-400 hover:text-gray-600" aria-label="Close">&#x2715;</button>
           </div>
         )}
         <div className="px-6 py-4">{children}</div>
