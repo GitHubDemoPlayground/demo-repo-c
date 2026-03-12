@@ -25,7 +25,13 @@ export const Button: React.FC<ButtonProps> = ({
   size = "md",
   isLoading = false,
   className,
-  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chi  chit-m  chi  chi  chi  chi  s focus:outline-none focus:ring-2 focus:ring-offset-2",
+  children,
+  disabled,
+  ...props
+}) => (
+  <button
+    className={cn(
+      "inline-flex items-center justify-center rounded-md border font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2",
       variantStyles[variant],
       sizeStyles[size],
       (disabled || isLoading) && "opacity-50 cursor-not-allowed",
