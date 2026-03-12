@@ -17,7 +17,12 @@ const variants = {
   error: "bg-red-50 border-red-200 text-red-800",
 };
 
-const icons = { info: "ℹ️", success: "✅", warning: "⚠️", error: "❌" };
+const icons: Record<string, string> = {
+  info: "\u2139\uFE0F",
+  success: "\u2705",
+  warning: "\u26A0\uFE0F",
+  error: "\u274C",
+};
 
 export const Alert: React.FC<AlertProps> = ({
   variant = "info",
@@ -28,11 +33,15 @@ export const Alert: React.FC<AlertProps> = ({
   className,
 }) => (
   <div className={cn("flex rounded-md border p-4", variants[variant], className)} role="alert">
-    <    <    <    <    <    <    <    <    <    <    <    <    <    <    <    <    <    <    <    <    <    <    <    <    <    <    <    <</p>}
+    <span className="mr-3 text-lg">{icons[variant]}</span>
+    <div className="flex-1">
+      {title && <p className="font-semibold">{title}</p>}
       <div className="text-sm">{children}</div>
     </div>
     {dismissible && (
-      <button onClick={onDismiss} className="ml-3 opacity-60 hover:opacity-100" aria-label="Dismiss">✕</button>
+      <button onClick={onDismiss} className="ml-3 opacity-60 hover:opacity-100" aria-label="Dismiss">
+        \u2715
+      </button>
     )}
   </div>
 );
